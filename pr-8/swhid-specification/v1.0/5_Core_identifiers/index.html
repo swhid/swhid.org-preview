@@ -1,0 +1,2590 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="SWHID — The international standard for software artifact identification (ISO/IEC 18670)">
+      
+      
+      
+        <link rel="canonical" href="https://swhid.org/swhid-specification/v1.0/5_Core_identifiers/">
+      
+      
+        <link rel="prev" href="../4.Syntax/">
+      
+      
+        <link rel="next" href="../6_Qualified_identifiers/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.39">
+    
+    
+      
+        <title>Clause 5: Core Identifiers - SWHID.org</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/pagefind-header.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/hide-version-tabs.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  
+  <script>window.__BASE_URL__ = "../../..";</script>
+  <link rel="stylesheet" href="../../../pagefind/pagefind-ui.css">
+
+  
+  
+  
+    <meta data-pagefind-filter="section:specification">
+    
+    <meta data-pagefind-filter="spec_version:v1.0">
+  
+
+  
+  
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#5-core-identifiers" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+  
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="SWHID.org" class="md-header__button md-logo" aria-label="SWHID.org" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.81 4.47c-.08 0-.16-.02-.23-.06C15.66 3.42 14 3 12 3c-1.97 0-3.85.47-5.56 1.41-.24.13-.54.04-.68-.2a.506.506 0 0 1 .2-.68C7.82 2.5 9.86 2 12 2s4 .47 6.04 1.5c.25.15.34.45.21.69a.48.48 0 0 1-.44.28M3.5 9.72c-.1 0-.2-.03-.29-.09a.517.517 0 0 1-.12-.7c.99-1.4 2.25-2.5 3.75-3.27C10 4.04 14 4.03 17.15 5.65c1.5.77 2.76 1.85 3.75 3.25.16.22.1.54-.12.7-.23.16-.54.11-.7-.1a9.26 9.26 0 0 0-3.39-2.96c-2.87-1.47-6.54-1.47-9.4.01-1.36.7-2.5 1.7-3.4 2.95-.08.15-.23.22-.39.22m6.25 12.07c-.13 0-.25-.05-.35-.15-.87-.87-1.34-1.43-2.01-2.64-.69-1.23-1.05-2.73-1.05-4.34 0-2.97 2.54-5.39 5.66-5.39s5.66 2.42 5.66 5.39a.5.5 0 0 1-.5.5.5.5 0 0 1-.5-.5c0-2.42-2.09-4.39-4.66-4.39s-4.66 1.97-4.66 4.39c0 1.44.32 2.77.93 3.84.64 1.16 1.08 1.65 1.85 2.43.19.2.19.51 0 .71-.12.1-.24.15-.37.15m7.17-1.85c-1.19 0-2.24-.3-3.1-.89-1.49-1.01-2.38-2.65-2.38-4.39a.5.5 0 0 1 .5-.5.5.5 0 0 1 .5.5c0 1.41.72 2.74 1.94 3.56.71.48 1.54.71 2.54.71.24 0 .64-.03 1.04-.1.27-.05.54.13.58.41.05.26-.13.53-.41.58-.57.11-1.07.12-1.21.12M14.91 22h-.13c-1.59-.46-2.63-1.05-3.72-2.12a7.28 7.28 0 0 1-2.17-5.22c0-1.62 1.38-2.94 3.08-2.94s3.08 1.32 3.08 2.94c0 1.07.95 1.94 2.08 1.94 1.15 0 2.08-.87 2.08-1.94 0-3.77-3.25-6.83-7.25-6.83-2.84 0-5.46 1.58-6.61 4.03-.39.81-.59 1.76-.59 2.8 0 .78.07 2.01.67 3.61.1.26-.03.55-.29.64a.504.504 0 0 1-.64-.29c-.5-1.31-.73-2.62-.73-3.96 0-1.2.23-2.29.68-3.24 1.33-2.79 4.28-4.6 7.51-4.6 4.54 0 8.25 3.51 8.25 7.83 0 1.62-1.38 2.94-3.08 2.94s-3.08-1.32-3.08-2.94c0-1.07-.93-1.94-2.08-1.94s-2.08.87-2.08 1.94c0 1.71.66 3.31 1.87 4.51.95.94 1.86 1.46 3.27 1.84.27.08.42.36.35.62-.05.23-.26.38-.47.38"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SWHID.org
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Clause 5: Core Identifiers
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/swhid" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../v1.2/" class="md-tabs__link">
+          
+  
+  Specification
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  v1.0
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../v1.1/" class="md-tabs__link">
+          
+  
+  v1.1
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dev/" class="md-tabs__link">
+          
+  
+  dev
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../swhid-governance/0._Contributor_License_Agreement/" class="md-tabs__link">
+          
+  
+  Governance
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../faq/" class="md-tabs__link">
+        
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../news/" class="md-tabs__link">
+          
+  
+  News
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../tags/" class="md-tabs__link">
+        
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../publications/" class="md-tabs__link">
+        
+  
+    
+  
+  Publications
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../coreteam/" class="md-tabs__link">
+        
+  
+    
+  
+  Core Team
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="SWHID.org" class="md-nav__button md-logo" aria-label="SWHID.org" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.81 4.47c-.08 0-.16-.02-.23-.06C15.66 3.42 14 3 12 3c-1.97 0-3.85.47-5.56 1.41-.24.13-.54.04-.68-.2a.506.506 0 0 1 .2-.68C7.82 2.5 9.86 2 12 2s4 .47 6.04 1.5c.25.15.34.45.21.69a.48.48 0 0 1-.44.28M3.5 9.72c-.1 0-.2-.03-.29-.09a.517.517 0 0 1-.12-.7c.99-1.4 2.25-2.5 3.75-3.27C10 4.04 14 4.03 17.15 5.65c1.5.77 2.76 1.85 3.75 3.25.16.22.1.54-.12.7-.23.16-.54.11-.7-.1a9.26 9.26 0 0 0-3.39-2.96c-2.87-1.47-6.54-1.47-9.4.01-1.36.7-2.5 1.7-3.4 2.95-.08.15-.23.22-.39.22m6.25 12.07c-.13 0-.25-.05-.35-.15-.87-.87-1.34-1.43-2.01-2.64-.69-1.23-1.05-2.73-1.05-4.34 0-2.97 2.54-5.39 5.66-5.39s5.66 2.42 5.66 5.39a.5.5 0 0 1-.5.5.5.5 0 0 1-.5-.5c0-2.42-2.09-4.39-4.66-4.39s-4.66 1.97-4.66 4.39c0 1.44.32 2.77.93 3.84.64 1.16 1.08 1.65 1.85 2.43.19.2.19.51 0 .71-.12.1-.24.15-.37.15m7.17-1.85c-1.19 0-2.24-.3-3.1-.89-1.49-1.01-2.38-2.65-2.38-4.39a.5.5 0 0 1 .5-.5.5.5 0 0 1 .5.5c0 1.41.72 2.74 1.94 3.56.71.48 1.54.71 2.54.71.24 0 .64-.03 1.04-.1.27-.05.54.13.58.41.05.26-.13.53-.41.58-.57.11-1.07.12-1.21.12M14.91 22h-.13c-1.59-.46-2.63-1.05-3.72-2.12a7.28 7.28 0 0 1-2.17-5.22c0-1.62 1.38-2.94 3.08-2.94s3.08 1.32 3.08 2.94c0 1.07.95 1.94 2.08 1.94 1.15 0 2.08-.87 2.08-1.94 0-3.77-3.25-6.83-7.25-6.83-2.84 0-5.46 1.58-6.61 4.03-.39.81-.59 1.76-.59 2.8 0 .78.07 2.01.67 3.61.1.26-.03.55-.29.64a.504.504 0 0 1-.64-.29c-.5-1.31-.73-2.62-.73-3.96 0-1.2.23-2.29.68-3.24 1.33-2.79 4.28-4.6 7.51-4.6 4.54 0 8.25 3.51 8.25 7.83 0 1.62-1.38 2.94-3.08 2.94s-3.08-1.32-3.08-2.94c0-1.07-.93-1.94-2.08-1.94s-2.08.87-2.08 1.94c0 1.71.66 3.31 1.87 4.51.95.94 1.86 1.46 3.27 1.84.27.08.42.36.35.62-.05.23-.26.38-.47.38"/></svg>
+
+    </a>
+    SWHID.org
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/swhid" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Specification
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Specification
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1.2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Copyright
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1.2/0.Foreword/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Foreword
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1.2/0.Introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1.2/1.Scope/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clause 1: Scope
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1.2/2.Normative_references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clause 2: Normative references
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1.2/3.Terms_and_definitions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clause 3: Terms and definitions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1.2/4.Syntax/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clause 4: Syntax
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1.2/5.Core_identifiers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clause 5: Core Identifiers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1.2/6.Qualified_identifiers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clause 6: Qualified Identifiers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1.2/A.Conformance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Annex A: Conformance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1.2/B.Bibliography/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Annex B: Bibliography
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    v1.0
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            v1.0
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Copyright
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0.Foreword/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Foreword
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0.Introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.Scope/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clause 1: Scope
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.Normative_references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clause 2: Normative references
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.Terms_and_definitions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clause 3: Terms and definitions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.Syntax/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clause 4: Syntax
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Clause 5: Core Identifiers
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Clause 5: Core Identifiers
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Directories
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53-revisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Revisions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54-releases" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 Releases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#55-snapshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5 Snapshots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#note-on-compatibility-with-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      Note on compatibility with Git
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6_Qualified_identifiers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clause 6: Qualified Identifiers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A.Conformance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Annex A: Conformance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../B.Bibliography/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Annex B: Bibliography
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    v1.1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            v1.1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1.1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Copyright
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1.1/0.Foreword/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Foreword
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1.1/0.Introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1.1/1.Scope/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clause 1: Scope
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1.1/2.Normative_references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clause 2: Normative references
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1.1/3.Terms_and_definitions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clause 3: Terms and definitions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1.1/4.Syntax/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clause 4: Syntax
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1.1/5.Core_identifiers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clause 5: Core Identifiers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1.1/6.Qualified_identifiers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clause 6: Qualified Identifiers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1.1/A.Conformance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Annex A: Conformance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1.1/B.Bibliography/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Annex B: Bibliography
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    dev
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            dev
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Copyright
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/0.Foreword/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Foreword
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/0.Introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/1.Scope/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clause 1: Scope
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/2.Normative_references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clause 2: Normative references
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/3.Terms_and_definitions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clause 3: Terms and definitions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/4.Syntax/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clause 4: Syntax
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/5.Core_identifiers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clause 5: Core Identifiers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/6.Qualified_identifiers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clause 6: Qualified Identifiers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/A.Conformance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Annex A: Conformance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/B.Bibliography/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Annex B: Bibliography
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Governance
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Governance
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../swhid-governance/0._Contributor_License_Agreement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contributor License Agreement
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../swhid-governance/1._Community_Specification_License_1.0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Community Specification License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../swhid-governance/2._Scope/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scope
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../swhid-governance/3._Notices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../swhid-governance/4._License/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../swhid-governance/5._Governance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Governance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../swhid-governance/6._Contributing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contributing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../swhid-governance/7._Code_of_Conduct/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code of Conduct
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    News
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            News
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../news/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    All news
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../news/2025-04-23-swhid-standardized-as-iso-iec-18670/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SWHID standardized as ISO/IEC 18670
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../news/2023-11-06-second-version-of-swhid-publicly-available-specification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Second version of SWHID Publicly Available Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../news/2023-06-23-first-version-of-swhid-publicly-available-specification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    First version of SWHID Publicly Available Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../news/2023-03-27-kickoff-of-the-swhid-working-group/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kickoff of the SWHID Working group
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../news/2022-09-07-swhid-org-goes-live/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SWHID.org goes live
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../news/2022-01-20-decision-to-start-the-swhid-normalization-process/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Decision to start the SWHID normalization process
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tags/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tags
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../publications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../coreteam/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Core Team
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+  
+  
+    
+    
+      <div id="swhid-version-selector" class="version-selector-inline" hidden>
+  <label for="version-selector" class="sr-only">Specification version</label>
+  <select id="version-selector" aria-label="Specification version"></select>
+</div>
+
+<script>
+(function () {
+  const container = document.getElementById('swhid-version-selector');
+  const select = document.getElementById('version-selector');
+  const BASE = (window.__BASE_URL__ || "").replace(/\/+$/, "");
+  const path = location.pathname.replace(/\/+$/, ''); // trim trailing slash
+
+  // Versions list from mkdocs.yml -> extra.swhid_spec_versions
+  const versions = [
+    
+      "v1.2","v1.1","v1.0","dev"
+    
+  ];
+  const latest = versions[0]; // convention: first is latest
+
+  // Try to parse current version from URL
+  let current = null;
+  // /swhid-specification/vX.Y/... or /swhid-specification/dev/...
+  const m = path.match(/^\/swhid-specification\/(v\d+\.\d+(?:\.\d+)?|dev)(?:\/|$)/);
+  if (m) current = m[1];
+
+  // Build options
+  select.innerHTML = [
+    '<option value="" disabled selected>Select version…</option>',
+    ...versions.map(v => `<option value="${v}" ${v === current ? 'selected' : ''}>${v}${v === latest ? ' (latest)' : ''}</option>`)
+  ].join('');
+
+  // When switching version, preserve the rest of the path if versioned; otherwise go to index of chosen version
+  select.addEventListener('change', () => {
+    const v = select.value;
+    if (!v) return;
+
+    let target;
+    if (current) {
+      // Preserve the remainder after the version segment
+      const rest = path.replace(/^\/swhid-specification\/(v\d+\.\d+(?:\.\d+)?|dev)\/?/, '');
+      target = `${BASE}/swhid-specification/${v}/${rest}`;
+    } else {
+      // Unversioned index → jump to the chosen version root
+      target = `${BASE}/swhid-specification/${v}/`;
+    }
+    location.href = target.replace(/\/+$/, '/'); // ensure trailing slash
+  });
+
+  container.hidden = false;
+})();
+</script>
+    
+  
+
+  
+                  
+
+  
+  
+
+
+<h1 id="5-core-identifiers">5 Core identifiers<a class="headerlink" href="#5-core-identifiers" title="Permanent link">&para;</a></h1>
+<p>A core SWHID identifier is composed of four fields, separated by a colon
+<code>:</code>.  The <code>swh</code> prefix makes it explicit that this is a SWHID identifier.  <code>1</code>
+(<code>&lt;scheme_version&gt;</code>) is the current version of this identifier <em>scheme</em>. Future
+editions will use higher version numbers, possibly breaking backward
+compatibility. The third field is a tag that correspond to the type of object
+identified:</p>
+<ul>
+<li><code>cnt</code> for <strong>contents</strong>.</li>
+<li><code>dir</code> for <strong>directories</strong>,</li>
+<li><code>rev</code> for <strong>revisions</strong>,</li>
+<li><code>rel</code> for <strong>releases</strong>,</li>
+<li><code>snp</code> for <strong>snapshots</strong>,</li>
+</ul>
+<p>The fourth and last field is the <em>intrinsic identifier</em> of the object.  In this
+version of the specification, this is a hex-encoded (using lowercase ASCII
+characters) SHA1 computed on the content and relevant metadata of the object
+itself, as follows.</p>
+<h2 id="51-contents">5.1 Contents<a class="headerlink" href="#51-contents" title="Permanent link">&para;</a></h2>
+<p>A <em>content</em> is an uninterpreted byte sequence, typically, the content of a file.
+For this type of object the intrinsic identifier is the <code>sha1_git</code> hash of it,
+i.e. the SHA1 of the byte sequence obtained by juxtaposing</p>
+<ul>
+<li>the ASCII string <code>"blob"</code> (without quotes),</li>
+<li>an ASCII space,</li>
+<li>the length of the content as ASCII-encoded decimal digits,</li>
+<li>a NULL byte,</li>
+<li>and the actual content of the file.</li>
+</ul>
+<p>No metadata is used for this type of object (in particular, notice that there
+is no file <em>name</em> mentioned here).</p>
+<p>As an example, <code>swh:1:cnt:94a9ed024d3859793618152ea559a168bbcbb5e2</code> is the SWHID computed from <a href="https://archive.softwareheritage.org/swh:1:cnt:94a9ed024d3859793618152ea559a168bbcbb5e2">the full text of the GPL3 license</a></p>
+<h2 id="52-directories">5.2 Directories<a class="headerlink" href="#52-directories" title="Permanent link">&para;</a></h2>
+<p>Directories are data structures commonly used in hierarchical file systems to group together files and other directories, and to hold relevant metadata about them, in the form of directory entries.</p>
+<p>This version of the SWHID standard adopts the same convention as the popular <em>git</em> version control system, and only takes into account as metadata the name of the directory entries (as a sequence of arbitrary bytes, excluding ASCII '/' and the NULL byte) and a simplified representation of the access rights.</p>
+<p>The names of entries in a directory must be distinct from one another.</p>
+<p>In order to compute the intrinsic identifier of a directory, it is necessary to compute first the SWHID of each object listed in the directory.</p>
+<p>Then one proceeds to create a serialization of the directory as follows:</p>
+<ol>
+<li>
+<p>sort the directory entries using the following algorithm</p>
+<ol>
+<li>for each entry pointing to a <em>directory</em>, append an ASCII '/' to its name</li>
+<li>sort all entries using the natural byte order of their (modified) name</li>
+</ol>
+</li>
+<li>
+<p>for each entry, with a given <em>name</em> (unmodified), add a sequence of bytes composed of</p>
+<ol>
+<li>the normalized access rights, encoded as a sequence of ASCII-encoded octal digits ('100644' for regular files, '100755' for executable files, '120000' for symbolic links, '40000' for directories),</li>
+<li>an ASCII space,</li>
+<li>the <em>name</em> as a raw string of bytes</li>
+<li>a NULL byte</li>
+<li>the <em>intrinsic identifier</em> of the <em>content</em> or <em>directory</em>, encoded as a sequence of 20 bytes</li>
+</ol>
+</li>
+</ol>
+<p>The intrinsic identifier of the directory is the SHA1 of the byte sequence obtained by juxtaposing</p>
+<ul>
+<li>the ASCII string <code>"tree"</code> (without quotes),</li>
+<li>an ASCII space,</li>
+<li>the length of the previously obtained serialization as ASCII-encoded decimal digits,</li>
+<li>a NULL byte,</li>
+<li>and the previously obtained serialization.</li>
+</ul>
+<p>As an example, <code>swh:1:dir:d198bc9d7a6bcf6db04f476d29314f157507d505</code> is the
+is the SWHID computed from
+<a href="https://archive.softwareheritage.org/swh:1:dir:d198bc9d7a6bcf6db04f476d29314f157507d505">a directory containing the source code of the darktable photography application</a> as
+a given point in time of its development on May 4th 2017.</p>
+<h2 id="53-revisions">5.3 Revisions<a class="headerlink" href="#53-revisions" title="Permanent link">&para;</a></h2>
+<p>Software development within a specific project is essentially a time-indexed series of copies of a single “root” directory that contains the entire project source code. Software evolves when a developer modifies the content of one or more files in that directory and record their changes.</p>
+<p>Each recorded copy of the root directory is known as a “revision”. It points to a single fully-determined directory and is equipped with arbitrary metadata. Some of those are added manually by the developer (e.g., revision message), others are automatically synthesized (timestamps, parent revision(s), etc).</p>
+<p>The supported metadata is as follows:</p>
+<ul>
+<li>author (arbitrary byte sequence, mandatory): generally contains the name and email address of the author of the revision.</li>
+<li>author timestamp (decimal timestamp from the Unix epoch, mandatory): the date at which the revision was authored.</li>
+<li>author timezone offset (arbitrary byte sequence): UTC offset at which the revision was authored, usually an ASCII-encoded [+/-]HHMM specification.</li>
+<li>committer (arbitrary byte sequence, mandatory): generally contains the name and email address of the committer of the revision.</li>
+<li>committer timestamp (decimal timestamp from the Unix epoch, mandatory): the date at which the revision was committed.</li>
+<li>committer timezone offset (arbitrary byte sequence): UTC offset at which the revision was committed, usually an ASCII-encoded [+/-]HHMM specification.</li>
+<li>directory (mandatory): the root directory recorded by the revision</li>
+<li>parent revisions (ordered list of revisions): the immediately preceding revisions in the development timeline. Can be empty for an initial revision, and have multiple revisions when multiple branches of history are being merged.</li>
+<li>extra headers (ordered list of byte key/value pairs): arbitrary additional metadata attached to the revision. The key must not contain the ASCII bytes for the space or LF characters; commonly used keys are a string of non-whitespace printable ASCII characters, such as <code>"encoding"</code> (where the value is interpreted as the encoding of the message field) or <code>"gpgsig"</code> (where the value is interpreted as an OpenPGP signature of the metadata of the revision).</li>
+<li>message: the message describing the revision</li>
+</ul>
+<p>In order to compute the intrinsic identifier of a revision, it is necessary to first compute the intrinsic identifier of the root directory recorded by the revision, as well as the intrinsic identifier of all parent revisions (recursively).</p>
+<p>The serialization of the revision is a sequence of lines in the following order:</p>
+<ul>
+<li>the reference to the root directory:<ul>
+<li>the ASCII string <code>"tree"</code> (4 bytes)</li>
+<li>an ASCII space</li>
+<li>the ASCII-encoded hexadecimal intrinsic identifier of the directory (40 ASCII bytes)</li>
+<li>a LF</li>
+</ul>
+</li>
+<li>for each parent revision, in the order they've been provided, a reference to that revision:<ul>
+<li>the ASCII string <code>"parent"</code> (6 bytes)</li>
+<li>an ASCII space</li>
+<li>the ASCII-encoded hexadecimal intrinsic identifier of the parent revision (40 ASCII bytes)</li>
+<li>a LF</li>
+</ul>
+</li>
+<li>the author line:<ul>
+<li>the ASCII string <code>"author"</code> (6 bytes)</li>
+<li>an ASCII space</li>
+<li>the string of bytes provided for the author name and email, with each LF replaced by LF followed by an ASCII space</li>
+<li>an ASCII space</li>
+<li>the ASCII-encoded decimal representation of the author timestamp</li>
+<li>an ASCII space</li>
+<li>the string of bytes provided for the author timezone offset, with each LF replaced by LF followed by an ASCII space</li>
+<li>a LF</li>
+</ul>
+</li>
+<li>the committer line:<ul>
+<li>the ASCII string <code>"committer"</code> (9 bytes)</li>
+<li>an ASCII space</li>
+<li>the string of bytes provided for the committer name and email, with each LF replaced by LF followed by an ASCII space</li>
+<li>an ASCII space</li>
+<li>the ASCII-encoded decimal representation of the committer timestamp</li>
+<li>an ASCII space</li>
+<li>the string of bytes provided for the committer timezone offset, with each LF replaced by LF followed by an ASCII space</li>
+<li>a LF</li>
+</ul>
+</li>
+<li>the extra header lines; for each provided key/value pair, in the order they have been provided:<ul>
+<li>the key</li>
+<li>an ASCII space</li>
+<li>the value, with each LF replaced by LF followed by an ASCII space</li>
+<li>a LF</li>
+</ul>
+</li>
+<li>if the message is defined:<ul>
+<li>an extra LF (the message is separated from the header with two LFs)</li>
+<li>the commit message as a raw string of bytes</li>
+</ul>
+</li>
+</ul>
+<p>The intrinsic identifier of the revision is the SHA1 of the byte sequence obtained by juxtaposing</p>
+<ul>
+<li>the ASCII string <code>"commit"</code> (6 bytes),</li>
+<li>an ASCII space,</li>
+<li>the length of the previously obtained serialization as ASCII-encoded decimal digits,</li>
+<li>a NULL byte,</li>
+<li>and the previously obtained serialization.</li>
+</ul>
+<p>As an example, <code>swh:1:rev:309cf2674ee7a0749978cf8265ab91a60aea0f7d</code> is the SWHID computed from
+<a href="https://archive.softwareheritage.org/swh:1:rev:309cf2674ee7a0749978cf8265ab91a60aea0f7d">a commit in the development history of Darktable</a>, dated 16 January 2017, that added undo/redo supports for masks.</p>
+<h2 id="54-releases">5.4 Releases<a class="headerlink" href="#54-releases" title="Permanent link">&para;</a></h2>
+<p>Some revisions get selected by developers as denoting important project milestones known as “releases”. Each release points to the last commit in project history corresponding to the release and carries metadata: release name and version, release message, cryptographic signatures, etc. If they're not attached to development history (e.g. if they've been imported from bare tarballs), releases can also point directly to a root directory instead of a full revision with metadata.</p>
+<p>The supported metadata is as follows:
+- name (arbitrary byte sequence, mandatory): a name identifying the release
+- author (arbitrary byte sequence): generally contains the name and email address of the author of the release.
+- author timestamp (decimal timestamp from the Unix epoch): the date at which the release was authored.
+- author timezone offset (arbitrary byte sequence): UTC offset at which the release was authored, usually an ASCII-encoded [+/-]HHMM specification.
+- target object (mandatory): a reference to another object, which can be either a revision, a directory or less commonly a content or another release
+- message: the message describing the release</p>
+<p>In order to compute the intrinsic identifier of a release, it is necessary to first compute the intrinsic identifier of the targeted object.</p>
+<p>The serialization of the release is a sequence of lines in the following order:</p>
+<ul>
+<li>the reference to the target object:<ul>
+<li>the ASCII string <code>"object"</code> (6 bytes)</li>
+<li>an ASCII space</li>
+<li>the ASCII-encoded hexadecimal intrinsic identifier of the target object (40 ASCII bytes)</li>
+<li>a LF</li>
+<li>the ASCII string <code>"type"</code> (4 bytes)</li>
+<li>an ASCII space</li>
+<li>an ASCII string referencing the type of the target object (<code>"commit"</code> for a revision, <code>"tree"</code> for a directory, <code>"tag"</code> for another release, <code>"blob"</code> for a content object)</li>
+<li>a LF</li>
+</ul>
+</li>
+<li>the name of the release:<ul>
+<li>the ASCII string <code>"tag"</code> (3 bytes)</li>
+<li>an ASCII space</li>
+<li>the string of bytes provided for the release name, with each LF replaced by LF followed by an ASCII space</li>
+<li>a LF</li>
+</ul>
+</li>
+<li>if there is an author, the author line:<ul>
+<li>the ASCII string <code>"tagger"</code> (6 bytes)</li>
+<li>an ASCII space</li>
+<li>the string of bytes provided for the author name and email, with each LF replaced by LF followed by an ASCII space</li>
+<li>an ASCII space</li>
+<li>the ASCII-encoded decimal representation of the author timestamp</li>
+<li>an ASCII space</li>
+<li>the string of bytes provided for the author timezone offset, with each LF replaced by LF followed by an ASCII space</li>
+<li>a LF</li>
+</ul>
+</li>
+<li>if the message is defined:<ul>
+<li>an extra LF (the message is separated from the header with two LFs)</li>
+<li>the commit message as a raw string of bytes</li>
+</ul>
+</li>
+</ul>
+<p>The intrinsic identifier of the release is the SHA1 of the byte sequence obtained by juxtaposing</p>
+<ul>
+<li>the ASCII string <code>"tag"</code> (3 bytes),</li>
+<li>an ASCII space,</li>
+<li>the length of the previously obtained serialization as ASCII-encoded decimal digits,</li>
+<li>a NULL byte,</li>
+<li>and the previously obtained serialization.</li>
+</ul>
+<p>As an example, <code>swh:1:rel:22ece559cc7cc2364edc5e5593d63ae8bd229f9f</code> is the SWHID computed from
+the <a href="https://archive.softwareheritage.org/swh:1:rel:22ece559cc7cc2364edc5e5593d63ae8bd229f9f">Darktable release 2.3.0</a>, dated 24 December 2016.</p>
+<h2 id="55-snapshots">5.5 Snapshots<a class="headerlink" href="#55-snapshots" title="Permanent link">&para;</a></h2>
+<p>Any kind of software origin offers multiple pointers to the “current” state of a development project. In the case of VCS this is reflected by branches (e.g., master, development, but also so called feature branches dedicated to extending the software in a specific direction); in the case of package distributions by notions such as suites that correspond to different maturity levels of individual packages (e.g., stable, development, etc.).</p>
+<p>A “snapshot” of a given software origin records all entry points found there and where each of them was pointing at the time. For example, a snapshot object might track the commit where the master branch was pointing to at any given time, as well as the most recent release of a given package in the stable suite of a FOSS distribution.</p>
+<p>Practically, a snapshot is a list of named branches pointing at objects of any of the known types (content, directory, revision, release or snapshot). A branch can also be an alias to another (named) branch, for instance the default <code>"HEAD"</code> branch can point at another, more specific, <code>"refs/heads/main"</code> branch.</p>
+<p>To compute the intrinsic identifier of a snapshot, one must first compute the intrinsic identifier of all objects referenced by the snapshot.</p>
+<p>Then one proceeds to create a serialization of the snapshot as follows:</p>
+<ol>
+<li>
+<p>sort the snapshot branches using the natural byte order of their name</p>
+</li>
+<li>
+<p>for each branch, with a given <em>name</em>, add a sequence of bytes composed of</p>
+<ul>
+<li>the type of the branch target:<ul>
+<li><code>"content"</code>, <code>"directory"</code>, <code>"revision"</code>, <code>"release"</code> or <code>"snapshot"</code> for each corresponding object type</li>
+<li><code>"alias"</code> for branches referencing another branch;</li>
+</ul>
+</li>
+<li>an ASCII space</li>
+<li>the branch name (as raw bytes)</li>
+<li>a NULL byte</li>
+<li>the length of the target identifier, as an ascii-encoded decimal number (<code>"20"</code> for intrinsic identifiers, the length of the name of the target branch for branch aliases)</li>
+<li>an ASCII colon (<code>":"</code>)</li>
+<li>the identifier of the target object pointed at by the branch:<ul>
+<li>for contents, directories, revisions, releases or snapshots: their intrinsic
+  identifier as a string of 20 bytes</li>
+<li>for branch aliases, the name of the target branch (as a string of bytes)</li>
+<li>for dangling branches, the empty string</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>Note that, akin to the serialization of directories, there is no separator between
+   entries. Because of alias branches, target identifiers are of arbitrary
+   length and are length-encoded to avoid ambiguity.</p>
+<p>The intrinsic identifier of the snapshot is the SHA1 of the byte sequence obtained by juxtaposing</p>
+<ul>
+<li>the ASCII string <code>"snapshot"</code> (8 bytes),</li>
+<li>an ASCII space,</li>
+<li>the length of the previously obtained serialization as ASCII-encoded decimal digits,</li>
+<li>a NULL byte,</li>
+<li>and the previously obtained serialization.</li>
+</ul>
+<p>As an example, <code>swh:1:snp:c7c108084bc0bf3d81436bf980b46e98bd338453</code> is the SWHID computed from
+<a href="https://archive.softwareheritage.org/swh:1:snp:c7c108084bc0bf3d81436bf980b46e98bd338453">a snapshot of the entire Darktable Git repository</a> as it was on 4 May 2017 on GitHub.</p>
+<h2 id="note-on-compatibility-with-git">Note on compatibility with Git<a class="headerlink" href="#note-on-compatibility-with-git" title="Permanent link">&para;</a></h2>
+<p>SWHIDs for contents, directories, revisions, and releases are, at present,
+compatible with the way the current version of <a href="https://git-scm.com/">Git</a> 
+proceeds for 
+<a href="https://git-scm.com/book/en/v2/Git-Internals-Git-Objects">computing identifiers</a> for
+its objects. The <code>&lt;object_id&gt;</code> part of a SWHID for a content object is the Git
+blob identifier of any file with the same content; for a revision it is the Git
+commit identifier for the same revision, etc.  This is not the case for snapshot
+identifiers, as Git does not have a corresponding object type.</p>
+<p>Git compatibility is practical, but incidental and is not guaranteed to be
+maintained in future versions of this standard, nor for different versions of
+Git.</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 19, 2023</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 24, 2022</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022–2025 SWHID Contributors.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.expand", "content.code.copy", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+        <script src="../../../assets/javascripts/hide-version-tabs.js"></script>
+      
+        <script src="../../../assets/javascripts/pagefind-header.js"></script>
+      
+    
+  </body>
+</html>
